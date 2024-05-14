@@ -1,0 +1,36 @@
+[package]
+name = "bevy_test"
+version = "0.1.0"
+edition = "2021"
+
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy) only
+[profile.dev.package."*"]
+opt-level = 3
+
+[dependencies]
+
+[dependencies.bevy]
+version = "0.13.2"
+default-features = false
+features = [
+    "bevy_core_pipeline",
+    "bevy_gilrs",
+    "bevy_gizmos",
+    "bevy_pbr",
+    "bevy_render",
+    "bevy_winit",
+    "dynamic_linking",
+    "multi-threaded",
+    "wayland",
+    "webgl2",
+    # assets
+    #"asset_processor",
+    #"file_watcher",
+    # file formats
+    "hdr",
+    "png",
+]
